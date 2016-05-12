@@ -30,23 +30,23 @@ namespace DPR_assignments.Strategies
             {
                 if (numberList.Max() > currentPossition)
                 {
-                    temp = numberList.OrderBy(x => x > currentPossition).First();
+                    temp = numberList.OrderBy(x => x).SkipWhile(x => x < currentPossition).First();
                 }
                 else
                 {
-                    temp = numberList.OrderByDescending(x => x < currentPossition).First();
+                    temp = numberList.OrderByDescending(x => x).TakeWhile(x => x < currentPossition).Last();
                 }
             }
             else
             {
                 if (numberList.Min() < currentPossition)
                 {
-                    temp = numberList.OrderBy(x => Math.Abs(x - currentPossition)).Last();
-                    
+                    temp = numberList.OrderBy(x => x).TakeWhile(x => x < currentPossition).Last();
+
                 }
                 else
                 {
-                    temp = numberList.OrderBy(x => x - currentPossition).Last();
+                    temp = numberList.OrderBy(x => x).SkipWhile(x => x < currentPossition).First();
                 }
             }
 

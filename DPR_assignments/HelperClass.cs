@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using DPR_assignments.Extra;
 using DPR_assignments.Strategies;
