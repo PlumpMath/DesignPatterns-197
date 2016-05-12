@@ -47,8 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extra\Constants.cs" />
-    <Compile Include="Extra\Number.cs" />
-    <Compile Include="Extra\TrackBarCursor.cs" />
     <Compile Include="HelperClass.cs" />
     <Compile Include="Strategies\ConcreteStrategyA.cs" />
     <Compile Include="Strategies\ConcreteStrategyB.cs" />

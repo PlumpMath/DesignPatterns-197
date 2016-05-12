@@ -38,8 +38,23 @@ namespace DPR_assignments
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
-            //trackBar1.Value = 10;
+            helperClass.Update(trackBar1, listBox1, getSelectedRadioButton());
+
+            label1.Text = trackBar1.Value.ToString();
+        }
+
+        private int getSelectedRadioButton()
+        {
+            int temp = 0;
+
+            if (radioButton1.Checked == true)
+                temp = (int)Constants.radioButtonCase.radeioButton1;
+            if (radioButton2.Checked == true)
+                temp = (int)Constants.radioButtonCase.radeioButton2;
+            if (radioButton3.Checked == true)
+                temp = (int)Constants.radioButtonCase.radeioButton3;
+
+            return temp;
         }
     }
 }
