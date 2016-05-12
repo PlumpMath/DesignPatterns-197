@@ -23,7 +23,7 @@ namespace DPR_assignments.Strategies
             return Constants.MoveDownCursor;
         }
 
-        public int HighliteNumber(List<int> numberList, int currentPossition)
+        public int HighliteNumberIndex(List<int> numberList, int currentPossition)
         {
             int temp = 0;
             if (upDirection)
@@ -34,7 +34,7 @@ namespace DPR_assignments.Strategies
                 }
                 else
                 {
-                    temp = numberList.OrderByDescending(x => x).TakeWhile(x => x < currentPossition).Last();
+                    temp = numberList.OrderBy(x => x).TakeWhile(x => x < currentPossition).Last();
                 }
             }
             else

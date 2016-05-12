@@ -38,12 +38,12 @@ namespace DPR_assignments
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            helperClass.Update(trackBar1, listBox1, getSelectedRadioButton());
+            helperClass.Update(trackBar1, listBox1, GetSelectedRadioButton());
 
             label1.Text = trackBar1.Value.ToString();
         }
 
-        private int getSelectedRadioButton()
+        private int GetSelectedRadioButton()
         {
             int temp = 0;
 

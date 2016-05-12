@@ -19,7 +19,7 @@ namespace DPR_assignments.Strategies
 
         }
 
-        public int HighliteNumber(List<int> numberList, int currentPossition)
+        public int HighliteNumberIndex(List<int> numberList, int currentPossition)
         {
             return 0;
         }

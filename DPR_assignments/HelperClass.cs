@@ -60,7 +60,7 @@ namespace DPR_assignments
                         listBox.DataSource = null;
                         listBox.DataSource = _numberList;
                     }
-                    tempTargetIndex = _strategies[0].HighliteNumber(_numberList, trackBar.Value);
+                    tempTargetIndex = _strategies[0].HighliteNumberIndex(_numberList, trackBar.Value);
                     listBox.SelectedIndex = tempTargetIndex;
                     break;
                 case (int)Constants.radioButtonCase.radeioButton2:
@@ -73,7 +73,7 @@ namespace DPR_assignments
                         listBox.DataSource = null;
                         listBox.DataSource = _numberList;
                     }
-                    tempTargetIndex = _strategies[1].HighliteNumber(_numberList, trackBar.Value);
+                    tempTargetIndex = _strategies[1].HighliteNumberIndex(_numberList, trackBar.Value);
                     listBox.SelectedIndex = tempTargetIndex;
                     break;
                 case (int)Constants.radioButtonCase.radeioButton3:
@@ -86,7 +86,7 @@ namespace DPR_assignments
                         listBox.DataSource = null;
                         listBox.DataSource = _numberList;
                     }
-                    tempTargetIndex = _strategies[2].HighliteNumber(_numberList, trackBar.Value);
+                    tempTargetIndex = _strategies[2].HighliteNumberIndex(_numberList, trackBar.Value);
                     listBox.SelectedIndex = tempTargetIndex;
                     break;
             }

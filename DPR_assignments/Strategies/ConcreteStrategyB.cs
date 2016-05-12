@@ -19,7 +19,7 @@ namespace DPR_assignments.Strategies
             return Constants.OnTargetCursor;
         }
 
-        public int HighliteNumber(List<int> numberList, int currentPossition)
+        public int HighliteNumberIndex(List<int> numberList, int currentPossition)
         {
             int closests = numberList.OrderBy(item => Math.Abs(currentPossition - item)).First();
 
