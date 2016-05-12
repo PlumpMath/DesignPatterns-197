@@ -46,14 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extra\Constants.cs" />
+    <Compile Include="Extra\Number.cs" />
+    <Compile Include="Extra\TrackBarCursor.cs" />
+    <Compile Include="HelperClass.cs" />
+    <Compile Include="Strategies\ConcreteStrategyA.cs" />
+    <Compile Include="Strategies\ConcreteStrategyB.cs" />
+    <Compile Include="Strategies\ConcreteStrategyC.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Strategies\IStrategy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
