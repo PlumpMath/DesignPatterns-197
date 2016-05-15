@@ -87,6 +87,8 @@ namespace week2_Observer
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            label2.Text = "Update in: " + counter;
+
             if (counter == 0)
             {
                 endh.Temperature = rr.Next(15, 25);
@@ -94,8 +96,6 @@ namespace week2_Observer
                 counter = 5;
                 label2.Text = "Updating";
             }
-
-            label2.Text = "Update in: " + counter;
             counter --;
         }
     }
