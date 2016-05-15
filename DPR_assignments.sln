@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DPR_assignments", "DPR_assignments\DPR_assignments.csproj", "{9E7D6F38-9CF2-4B2C-81B4-F1B39CAF9CFA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "week1-Strategy", "week1-Strategy\week1-Strategy.csproj", "{9E7D6F38-9CF2-4B2C-81B4-F1B39CAF9CFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "week2-Observer", "week2-Observer\week2-Observer.csproj", "{B547375B-B287-49D5-B01B-9ABCB7AF33C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{9E7D6F38-9CF2-4B2C-81B4-F1B39CAF9CFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E7D6F38-9CF2-4B2C-81B4-F1B39CAF9CFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E7D6F38-9CF2-4B2C-81B4-F1B39CAF9CFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B547375B-B287-49D5-B01B-9ABCB7AF33C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B547375B-B287-49D5-B01B-9ABCB7AF33C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B547375B-B287-49D5-B01B-9ABCB7AF33C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B547375B-B287-49D5-B01B-9ABCB7AF33C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
