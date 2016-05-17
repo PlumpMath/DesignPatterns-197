@@ -10,30 +10,31 @@ using System.Windows.Forms;
 
 namespace week2_Observer
 {
-    public partial class Form1 : Form
+    public partial class Form2 : Form
     {
-        private Eindhoven endh;
-        private Amsterdam amst;
+        private WeatherData weatherData;
         private List<Forecaster> forecasters = new List<Forecaster>();
-        private int counter;
+        private int counterTemp;
+        private int counterHum;
+        private int counterPres;
         private Random rr;
 
-        public Form1()
+        public Form2()
         {
             InitializeComponent();
             forecasters.Add(new Forecaster(lblPhone));
             forecasters.Add(new Forecaster(lblWatch));
             forecasters.Add(new Forecaster(lblMac));
 
-            endh = new Eindhoven("Celsius", 20);
-            amst = new Amsterdam("Fahrenheit", 68);
-
-            endh.Attach(forecasters[0]);
-            endh.Attach(forecasters[1]);
-            amst.Attach(forecasters[2]);
+            weatherData = new WeatherData();
+            weatherData.RegisterWeatherData(forecasters[0]);
+            weatherData.RegisterWeatherData(forecasters[1]);
+            weatherData.RegisterWeatherData(forecasters[2]);
 
             rr = new Random();
-            counter = 5;
+            counterTemp = 5;
+            counterHum = 10;
+            counterPres = 8;
             timer1.Start();
         }
 
@@ -43,13 +44,13 @@ namespace week2_Observer
             {
                 button1.Text = "Attach";
                 forecasters[0].Attached = false;
-                endh.Detach(forecasters[0]);
+                weatherData.RemoveWeatherData(forecasters[0]);
             }
             else
             {
                 button1.Text = "Detach";
                 forecasters[0].Attached = true;
-                endh.Attach(forecasters[0]);
+                weatherData.RegisterWeatherData(forecasters[0]);
             }
         }
 
@@ -59,13 +60,13 @@ namespace week2_Observer
             {
                 button2.Text = "Attach";
                 forecasters[1].Attached = false;
-                endh.Detach(forecasters[1]);
+                weatherData.RemoveWeatherData(forecasters[1]);
             }
             else
             {
                 button2.Text = "Detach";
                 forecasters[1].Attached = true;
-                endh.Attach(forecasters[1]);
+                weatherData.RegisterWeatherData(forecasters[1]);
             }
         }
 
@@ -75,28 +76,41 @@ namespace week2_Observer
             {
                 button3.Text = "Attach";
                 forecasters[2].Attached = false;
-                amst.Detach(forecasters[2]);
+                weatherData.RemoveWeatherData(forecasters[2]);
             }
             else
             {
                 button3.Text = "Detach";
                 forecasters[2].Attached = true;
-                amst.Attach(forecasters[2]);
+                weatherData.RegisterWeatherData(forecasters[2]);
             }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            label2.Text = "Update in: " + counter;
+            label2.Text = "Update in: " + Environment.NewLine
+                          + "temperature: " + counterTemp + Environment.NewLine
+                          + "humidity: " + counterHum + Environment.NewLine
+                          + "pressure: " + counterPres;
 
-            if (counter == 0)
+            if (counterTemp == 0)
             {
-                endh.Temperature = rr.Next(15, 25);
-                amst.Temperature = rr.Next(55, 75);
-                counter = 5;
-                label2.Text = "Updating";
+                weatherData.Temperature1 = rr.Next(15, 25);
+                counterTemp = 5;
             }
-            counter --;
+            if (counterHum == 0)
+            {
+                weatherData.Humidity1 = rr.Next(20, 90);
+                counterHum = 10;
+            }
+            if (counterPres == 0)
+            {
+                weatherData.Pressure = rr.Next(10, 50);
+                counterPres = 8;
+            }
+            counterTemp--;
+            counterHum--;
+            counterPres--;
         }
     }
 }
