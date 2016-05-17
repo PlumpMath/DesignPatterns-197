@@ -33,7 +33,7 @@ namespace week2_Observer
 
             rr = new Random();
             counterTemp = 5;
-            counterHum = 10;
+            counterHum = 11;
             counterPres = 8;
             timer1.Start();
         }
@@ -101,7 +101,7 @@ namespace week2_Observer
             if (counterHum == 0)
             {
                 weatherData.Humidity1 = rr.Next(20, 90);
-                counterHum = 10;
+                counterHum = 11;
             }
             if (counterPres == 0)
             {

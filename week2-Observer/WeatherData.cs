@@ -7,6 +7,7 @@ namespace week2_Observer
     {
         void RegisterWeatherData(IForecaster o);
         void RemoveWeatherData(IForecaster o);
+        void Notify();
         float Humidity1 { get; set; }
         float Pressure { get; set; }
         float Temperature1 { get; set; }
