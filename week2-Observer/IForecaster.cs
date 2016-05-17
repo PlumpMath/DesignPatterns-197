@@ -5,7 +5,7 @@ namespace week2_Observer
 {
     public interface IForecaster
     {
-        void Update(WeatherData weatherStation);
+        void Update(IWeatherData weatherStation);
     }
 
     public class Forecaster : IForecaster
@@ -20,11 +20,12 @@ namespace week2_Observer
 
         public bool Attached { get; set; }
 
-        public void Update(WeatherData weatherData)
+        public void Update(IWeatherData weatherData)
         {
-            _device.Text = "temp: " + weatherData.Temperature1 + Environment.NewLine
-                           + "hum: " + weatherData.Humidity1 + Environment.NewLine
-                           + "pres: " + weatherData.Pressure;
+            WeatherData temp = (WeatherData) weatherData;
+            _device.Text = "temp: " + temp.Temperature1 + Environment.NewLine
+                           + "hum: " + temp.Humidity1 + Environment.NewLine
+                           + "pres: " + temp.Pressure;
         }
 
     }

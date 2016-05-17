@@ -27,9 +27,9 @@ namespace week2_Observer
             forecasters.Add(new Forecaster(lblMac));
 
             weatherData = new WeatherData();
-            weatherData.RegisterWeatherData(forecasters[0]);
-            weatherData.RegisterWeatherData(forecasters[1]);
-            weatherData.RegisterWeatherData(forecasters[2]);
+            weatherData.AttachData(forecasters[0]);
+            weatherData.AttachData(forecasters[1]);
+            weatherData.AttachData(forecasters[2]);
 
             rr = new Random();
             counterTemp = 5;
@@ -44,13 +44,13 @@ namespace week2_Observer
             {
                 button1.Text = "Attach";
                 forecasters[0].Attached = false;
-                weatherData.RemoveWeatherData(forecasters[0]);
+                weatherData.DetachData(forecasters[0]);
             }
             else
             {
                 button1.Text = "Detach";
                 forecasters[0].Attached = true;
-                weatherData.RegisterWeatherData(forecasters[0]);
+                weatherData.AttachData(forecasters[0]);
             }
         }
 
@@ -60,13 +60,13 @@ namespace week2_Observer
             {
                 button2.Text = "Attach";
                 forecasters[1].Attached = false;
-                weatherData.RemoveWeatherData(forecasters[1]);
+                weatherData.DetachData(forecasters[1]);
             }
             else
             {
                 button2.Text = "Detach";
                 forecasters[1].Attached = true;
-                weatherData.RegisterWeatherData(forecasters[1]);
+                weatherData.AttachData(forecasters[1]);
             }
         }
 
@@ -76,13 +76,13 @@ namespace week2_Observer
             {
                 button3.Text = "Attach";
                 forecasters[2].Attached = false;
-                weatherData.RemoveWeatherData(forecasters[2]);
+                weatherData.DetachData(forecasters[2]);
             }
             else
             {
                 button3.Text = "Detach";
                 forecasters[2].Attached = true;
-                weatherData.RegisterWeatherData(forecasters[2]);
+                weatherData.AttachData(forecasters[2]);
             }
         }
 

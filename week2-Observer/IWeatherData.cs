@@ -5,12 +5,9 @@ namespace week2_Observer
 {
     public interface IWeatherData
     {
-        void RegisterWeatherData(IForecaster o);
-        void RemoveWeatherData(IForecaster o);
+        void AttachData(IForecaster o);
+        void DetachData(IForecaster o);
         void Notify();
-        float Humidity1 { get; set; }
-        float Pressure { get; set; }
-        float Temperature1 { get; set; }
     }
 
     public class WeatherData : IWeatherData
@@ -67,12 +64,12 @@ namespace week2_Observer
             }
         }
 
-        public void RegisterWeatherData(IForecaster o)
+        public void AttachData(IForecaster o)
         {
             _forecasters.Add(o);
         }
 
-        public void RemoveWeatherData(IForecaster o)
+        public void DetachData(IForecaster o)
         {
             _forecasters.Remove(o);
         }
